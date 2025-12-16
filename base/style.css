@@ -50,6 +50,7 @@ button {
 }
 button:hover {
     background-color: #408bfc;
+    cursor: pointer;
 }
 
 input {

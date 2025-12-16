@@ -1,30 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Selecionando os elementos: formulario, campos obrigatórios e resultado
     const form = document.getElementById("form");
+    const camposObg = document.querySelectorAll(".obrigatorio");
     const resultadoElement = document.querySelector("#resultado");
 
-    form.addEventListener("submit", validarFormulario);
-
-    function validarFormulario(event) {
-        const campos = document.querySelectorAll(".obrigatorio");
-
+    form.addEventListener("submit", (event) => {
+        // Previnindo comportamento padrão
         event.preventDefault();
-        let valido = true;
-        resetarForm();
-        resultadoElement.style.display = "none";
 
-        for (let campo of campos) {
-            if (campo.value == "" || campo.value == null) {
-                const span = campo.parentNode.querySelector("span");
-                span.textContent = "Campo Obrigatório";
-                span.style.display = "inline-block";
-                valido = false;
-            }
-        }
+        // Resetando o formulário
+        resetarForm(resultadoElement);
 
-        if (valido) {
+        if (validarCampos()) {
+            // Selecionando os campos
             const nome = document.querySelector("#inputNome").value;
 
-            //
             const inputAltura = document.querySelector("#inputAltura");
             const valorAltura = inputAltura.value;
             inputAltura.value = Number(valorAltura).toFixed(2);
@@ -33,31 +23,36 @@ document.addEventListener("DOMContentLoaded", () => {
             const valorPeso = inputPeso.value;
             inputPeso.value = Number(valorPeso).toFixed(2);
 
+            // Calculando IMC
             let [imc, categoria] = calcularIMC(
                 valorAltura,
                 valorPeso,
                 resultadoElement
             );
 
+            // Mostrando resultado
             resultadoElement.textContent = `${nome}, seu IMC é ${imc.toFixed(
                 2
             )} e você está na categoria '${categoria}'`;
             resultadoElement.style.display = "inline-block";
 
+            // Enviando os dados
             enviarDados(categoria);
         }
-    }
+    });
 
-    function resetarForm() {
+    // Função responsavel por resetar o formulário
+    function resetarForm(tagResultado) {
         const spans = document.querySelectorAll("span");
 
         for (let span of spans) {
             span.textContent = "";
             span.style.display = "none";
         }
-        resultadoElement.style.display = "none";
+        tagResultado.style.display = "none";
     }
 
+    // Função responsavel pelo cálculo da IMC
     function calcularIMC(altura, peso, tagResultado) {
         let imc = peso / altura ** 2;
         let categoria;
@@ -79,12 +74,27 @@ document.addEventListener("DOMContentLoaded", () => {
         return [imc, categoria];
     }
 
+    // Função responsavel por enviar os dados
     function enviarDados(categoria) {
         console.clear();
         const formObject = new FormData(form);
         for (let [chave, valor] of formObject.entries()) {
             console.log(chave + ":" + valor);
+            Edu;
         }
         console.log("categoria:" + categoria);
+    }
+
+    // Função responsavel pela validação dos campos
+    function validarCampos() {
+        for (let campo of camposObg) {
+            if (campo.value == "" || campo.value == null) {
+                const span = campo.parentNode.querySelector("span");
+                span.textContent = "Campo Obrigatório";
+                span.style.display = "inline-block";
+                return false;
+            }
+        }
+        return true;
     }
 });
