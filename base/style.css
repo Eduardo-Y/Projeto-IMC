@@ -1,0 +1,96 @@
+:root {
+    --cor-fundo: #e3e3e3;
+    --cor-principal: #234c6a;
+    --cor-fonte: #e3e3e3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "roboto", sans-serif;
+    color: var(--cor-fonte);
+}
+
+main,
+#container,
+#form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main {
+    min-height: 100vh;
+    background-color: var(--cor-fundo);
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+label {
+    display: inline-block;
+    margin: 1.2rem;
+    font-size: 2rem;
+}
+
+button {
+    padding: 0.6rem;
+    margin-top: 3rem;
+    border: solid 1px transparent;
+    border-radius: 0.6rem;
+    background-color: #2b7fff;
+    color: var(--cor-fonte);
+}
+button:hover {
+    background-color: #408bfc;
+}
+
+input {
+    padding-left: 1.2rem;
+    height: 2.8rem;
+    width: 100%;
+    border: solid 1px transparent;
+    border-radius: 0.4rem;
+    background-color: var(--cor-fundo);
+}
+
+span {
+    font-family: "Times New Roman", Times, serif;
+    color: red;
+    font-size: 1.6rem;
+}
+
+#resultado {
+    display: none;
+    padding: 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: black;
+    border-radius: 1.2rem;
+}
+
+#form {
+    gap: 2rem;
+    width: 35rem;
+}
+
+#container {
+    gap: 2rem;
+    padding: 8rem 10rem;
+    border: solid 1px transparent;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 1.5rem 0.3rem black;
+    background-color: var(--cor-principal);
+}
+
+#container div,
+#container button {
+    width: 100%;
+}
