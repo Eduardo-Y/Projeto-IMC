@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const formObject = new FormData(form);
         for (let [chave, valor] of formObject.entries()) {
             console.log(chave + ":" + valor);
-            Edu;
         }
         console.log("categoria:" + categoria);
     }
