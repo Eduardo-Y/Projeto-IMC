@@ -42,7 +42,7 @@ label {
 
 button {
     padding: 0.6rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
     border: solid 1px transparent;
     border-radius: 0.6rem;
     background-color: #2b7fff;
@@ -65,6 +65,7 @@ span {
     font-family: "Times New Roman", Times, serif;
     color: red;
     font-size: 1.6rem;
+    margin-top: 1rem;
 }
 
 #resultado {
