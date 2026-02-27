@@ -2,6 +2,10 @@
 
 Este é um projeto de uma **Calculadora de Índice de Massa Corporal (IMC)** desenvolvida com foco em fundamentos de Front-end. A aplicação permite que o usuário insira nome, peso e altura para obter o valor do seu IMC e a classificação correspondente, com feedback visual dinâmico.
 
+## Projeto
+
+<img width="1361" height="641" alt="image" src="https://github.com/user-attachments/assets/4d2063d1-0019-47d9-b1e1-0cbc713f79cc" />
+
 ## 🎯 Objetivo do Projeto
 
 O principal objetivo deste projeto foi aplicar e consolidar conhecimentos práticos de desenvolvimento front-end, especificamente:
